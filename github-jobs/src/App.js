@@ -1,35 +1,39 @@
 import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
+import { connect, useSelector, useDispatch } from 'react-redux';
 import './App.css';
 
 import { getData } from './store/actions';
 
 import Jobs from './components/Jobs';
 
-function App({ getData, data, isFetching }) {
+export default function App(props) {
+  const data = useSelector(state => state.data);
+  const isFetching = useSelector(state => state.isFetching);
+  const dispatch = useDispatch();
+
   const [search, setSearch] = useState('');
   const [location, setLocation] = useState('');
 
-  useEffect(() => getData('', ''), []);
+  useEffect(() => dispatch(getData('', '')), []);
 
   const handleKeyDown = e => {
     if (e.key === 'Enter') {
       e.preventDefault();
-      getData(search, location);
+      dispatch(getData(search, location));
     }
   };
 
   const handleReset = () => {
     setSearch('');
     setLocation('');
-    getData('', '');
+    dispatch(getData('', ''));
   };
 
   return (
     <div className='App'>
       <header>
         <h1 onClick={handleReset}>
-          <span className='bold'>GitHub</span> Jobs
+          <span className='bold'>Git</span>Hired
         </h1>
         <input
           type='text'
@@ -45,13 +49,15 @@ function App({ getData, data, isFetching }) {
           onChange={e => setLocation(e.target.value)}
           onKeyDown={e => handleKeyDown(e)}
         />
-        <button onClick={() => getData(search, location)}>Search</button>
+        <button onClick={() => dispatch(getData(search, location))}>
+          Search
+        </button>
       </header>
 
       {isFetching && (
-        <p className='fetching'>
+        <h4 className='fetching'>
           Fetching data, thank you for your patience...
-        </p>
+        </h4>
       )}
 
       {!isFetching && <Jobs data={data} />}
@@ -59,15 +65,15 @@ function App({ getData, data, isFetching }) {
   );
 }
 
-const mapStateToProps = state => {
-  return {
-    data: state.data,
-    isFetching: state.isFetching,
-    error: state.error,
-  };
-};
+// const mapStateToProps = state => {
+//   return {
+//     data: state.data,
+//     isFetching: state.isFetching,
+//     error: state.error,
+//   };
+// };
 
-export default connect(
-  mapStateToProps,
-  { getData },
-)(App);
+// export default connect(
+//   mapStateToProps,
+//   { getData },
+// )(App);
