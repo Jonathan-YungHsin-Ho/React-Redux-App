@@ -15,11 +15,14 @@ header {
   background-color: #14121f;
   padding-left: 2%;
   box-shadow: 0 0px 5px #14121f;
-  margin: 0 0 40px;
   padding: 0 2%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 input {
@@ -58,6 +61,7 @@ h1 {
 }
 
 .job-card-wrapper {
+  margin-top: 100px;
   padding: 0 1%;
   display: flex;
   flex-wrap: wrap;
@@ -103,6 +107,7 @@ p {
 
 .job-card img {
   width: 200px;
+  margin: 10px 0;
 }
 
 .job-company {
