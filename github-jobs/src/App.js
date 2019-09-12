@@ -6,7 +6,7 @@ import { getData } from './store/actions';
 
 import Jobs from './components/Jobs';
 
-export default function App(props) {
+export default function App() {
   const data = useSelector(state => state.data);
   const isFetching = useSelector(state => state.isFetching);
   const dispatch = useDispatch();
