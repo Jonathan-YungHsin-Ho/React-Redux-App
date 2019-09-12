@@ -12,7 +12,9 @@ function App({ getData, data }) {
   return (
     <div className='App'>
       <header>
-        <h1>GitHub Jobs</h1>
+        <h1>
+          <span className='bold'>GitHub</span> Jobs
+        </h1>
         <Jobs data={data} />
       </header>
     </div>
