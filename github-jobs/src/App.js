@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { connect, useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import './App.css';
 
+import { useDarkMode } from './hooks/useDarkMode';
 import { getData } from './store/actions';
 
 import Jobs from './components/Jobs';
@@ -13,6 +14,12 @@ export default function App() {
 
   const [search, setSearch] = useState('');
   const [location, setLocation] = useState('');
+
+  const [darkMode, setDarkMode] = useDarkMode(false);
+  const toggleMode = e => {
+    e.preventDefault();
+    setDarkMode(!darkMode);
+  };
 
   useEffect(() => dispatch(getData('', '')), []);
 
@@ -52,6 +59,7 @@ export default function App() {
         <button onClick={() => dispatch(getData(search, location))}>
           Search
         </button>
+        <button onClick={toggleMode}>{darkMode ? 'Dark' : 'Light'}</button>
       </header>
 
       {isFetching && (
