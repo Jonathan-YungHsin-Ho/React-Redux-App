@@ -25,22 +25,6 @@ header {
   width: 100%;
 }
 
-@media screen and (max-width: 599px) {
-  header {
-    flex-direction: column;
-    position: relative;
-  }
-
-  input {
-    width: 90%;
-  }
-
-  button {
-    margin: 10px 0;
-    width: 90%;
-  }
-}
-
 input {
   font-family: inherit;
   padding: 5px 1%;
@@ -55,6 +39,7 @@ button {
   color: #14121f;
   padding: 5px 1%;
   border-radius: 5px;
+  text-align: center;
   cursor: pointer;
 }
 
@@ -150,4 +135,24 @@ p {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+@media screen and (max-width: 599px) {
+  header {
+    flex-direction: column;
+    position: relative;
+  }
+
+  input {
+    width: 90%;
+  }
+
+  button {
+    margin: 20px 0;
+    width: 90%;
+  }
+
+  .job-card-wrapper {
+    margin-top: 30px;
+  }
 }
