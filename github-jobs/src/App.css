@@ -200,4 +200,8 @@ a {
   .fetching {
     top: 300px;
   }
+
+  .dark-mode .button-mode {
+    margin-top: 0;
+  }
 }

@@ -59,7 +59,9 @@ export default function App() {
         <button onClick={() => dispatch(getData(search, location))}>
           Search
         </button>
-        <button onClick={toggleMode}>{darkMode ? 'Dark' : 'Light'}</button>
+        <button onClick={toggleMode} className='button-mode'>
+          {darkMode ? 'Dark' : 'Light'}
+        </button>
       </header>
 
       {isFetching && (
