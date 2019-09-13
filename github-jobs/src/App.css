@@ -155,4 +155,8 @@ a {
   .job-card-wrapper {
     margin-top: 30px;
   }
+
+  .fetching {
+    top: 300px;
+  }
 }
