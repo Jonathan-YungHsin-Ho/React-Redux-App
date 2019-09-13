@@ -170,7 +170,7 @@ a {
 }
 
 .dark-mode .job-card-header {
-  border-bottom: 1px solid #14121f;
+  border-bottom: none;
 }
 
 .dark-mode .fetching {
