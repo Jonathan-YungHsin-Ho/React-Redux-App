@@ -1,3 +1,26 @@
+# GitHired
+
+You can find the deployed project at [git-hired.netlify.com](https://git-hired.netlify.com/).
+
+## Project Overview
+
+This app provides searchable information regarding software development jobs via [GitHub Jobs API](https://jobs.github.com/api).
+
+### Tech Stack
+
+- React
+- Redux
+- Axios
+- Thunk
+
+## Installation
+
+Clone this repo, then from the `github-jobs` directory run `yarn` then `yarn start`.
+
+## Contributors
+
+- [Jonathan Ho](https://github.com/Jonathan-YungHsin-Ho)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
